@@ -2,6 +2,7 @@ package com.example.elise.finalproject;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Elise on 4/8/2015.
+ * Created by Elise Johnson and Alex Gwaltney on 4/8/2015.
  */
+
 public class RecyclerViewFragment extends Fragment {
 
     private RecyclerView recyclerMonsters;
@@ -53,7 +55,7 @@ public class RecyclerViewFragment extends Fragment {
         //Creating list of monsters and filling with data
         List<Monster> monsters = new ArrayList<>();
 
-        monsters.add(new Monster("Monster 1"));
+        monsters.add(new Monster("Monster 1",15,50,30,12,12,12,12,12,12,"Skill 1","Action 1"));
 
         return monsters;
     }

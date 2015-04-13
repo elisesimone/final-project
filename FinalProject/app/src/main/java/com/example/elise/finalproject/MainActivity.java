@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 
+/**
+ * Created by Elise Johnson and Alex Gwaltney on 4/8/2015.
+ */
 
 public class MainActivity extends Activity {
 
