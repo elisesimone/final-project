@@ -2,6 +2,8 @@ package com.example.elise.finalproject;
 
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 /**
  * Created by Elise Johnson and Alex Gwaltney on 4/8/2015.
  */
@@ -27,8 +29,8 @@ public class Monster {
     private String senses;
     private String languages;
     private int challenge;
-    private TextView actions;
-    private TextView special;
+    private ArrayList actions;
+    private ArrayList special;
 
     //Constructor
     public Monster(String name, String ac, int hp, int speed,
@@ -36,8 +38,8 @@ public class Monster {
                    int wis, int cha, String skills, String savingThrows,
                    String damageImmunities, String damageResistance,
                    String conditionImmunities, String senses,
-                   String languages, int challenge, TextView actions,
-                   TextView special){
+                   String languages, int challenge, ArrayList actions,
+                   ArrayList special){
         this.name = name;
         this.ac = ac;
         this.hp = hp;
@@ -73,30 +75,30 @@ public class Monster {
         return hp;
     }
 
-    public Integer getSpeed(){
+    public int getSpeed(){
         return speed;
     }
 
-    public Integer getStr(){
+    public int getStr(){
         return str;
     }
 
-    public Integer getDex(){
+    public int getDex(){
         return dex;
     }
-    public Integer getCon(){
+    public int getCon(){
         return con;
     }
 
-    public Integer getIntel(){
+    public int getIntel(){
         return intel;
     }
 
-    public Integer getWis(){
+    public int getWis(){
         return wis;
     }
 
-    public Integer getCha(){
+    public int getCha(){
         return cha;
     }
 
@@ -104,8 +106,40 @@ public class Monster {
         return skills;
     }
 
-    public TextView getActions(){
+    public String getSavingThrows(){
+        return savingThrows;
+    }
+
+    public String getDamageImmunities(){
+        return damageImmunities;
+    }
+
+    public String getDamageResistance(){
+        return damageResistance;
+    }
+
+    public String getConditionImmunities(){
+        return conditionImmunities;
+    }
+
+    public String getSenses(){
+        return senses;
+    }
+
+    public String getLanguages(){
+        return languages;
+    }
+
+    public int getChallenge(){
+        return challenge;
+    }
+
+    public ArrayList getActions(){
         return actions;
+    }
+
+    public ArrayList getSpecial(){
+        return special;
     }
 
 }

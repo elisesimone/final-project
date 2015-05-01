@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -39,7 +40,7 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
 
                 //Getting the monster information for the item clicked on
                 String name = monsters.get(position).getName();
-                Integer ac = monsters.get(position).getAc();
+                String ac = monsters.get(position).getAc();
                 Integer hp = monsters.get(position).getHp();
                 Integer speed = monsters.get(position).getSpeed();
                 Integer str = monsters.get(position).getStr();
@@ -49,7 +50,7 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
                 Integer wis = monsters.get(position).getWis();
                 Integer cha = monsters.get(position).getCha();
                 String skills = monsters.get(position).getSkills();
-                String actions = monsters.get(position).getActions();
+                ArrayList actions = monsters.get(position).getActions();
 
                 //Adding a new intent with flags because the adapter is not an activity
                 Intent intent = new Intent(context, SecondActivity.class);
@@ -91,7 +92,6 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
         holder.tvWis.setText("WIS: "+monsters.get(position).getWis());
         holder.tvIntel.setText("INT: "+monsters.get(position).getIntel());
         holder.tvSkills.setText("Skills: "+monsters.get(position).getSkills());
-        holder.tvActions.setText("Actions: "+monsters.get(position).getActions());
     }
 
     @Override
@@ -116,7 +116,6 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
         TextView tvIntel;
         TextView tvCha;
         TextView tvSkills;
-        TextView tvActions;
 
         //ViewHolder constructor maps views and assigns listeners to each view
         public ViewHolder (View itemView, ItemClickListener listener){
@@ -124,18 +123,17 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
             this.listener = listener;
 
             //Mapping views
-            tvName = (TextView) itemView.findViewById(R.id.tv_name);
-            tvAc = (TextView) itemView.findViewById(R.id.tv_ac);
-            tvHp = (TextView) itemView.findViewById(R.id.tv_hp);
-            tvSpeed = (TextView) itemView.findViewById(R.id.tv_speed);
-            tvStr = (TextView) itemView.findViewById(R.id.tv_str);
-            tvDex = (TextView) itemView.findViewById(R.id.tv_dex);
-            tvCon = (TextView) itemView.findViewById(R.id.tv_con);
-            tvWis = (TextView) itemView.findViewById(R.id.tv_wis);
-            tvIntel = (TextView) itemView.findViewById(R.id.tv_intel);
-            tvCha = (TextView) itemView.findViewById(R.id.tv_cha);
-            tvSkills = (TextView) itemView.findViewById(R.id.tv_skills);
-            tvActions = (TextView) itemView.findViewById(R.id.tv_actions);
+            tvName = (TextView) itemView.findViewById(R.id.tvName);
+            tvAc = (TextView) itemView.findViewById(R.id.tvAC);
+            tvHp = (TextView) itemView.findViewById(R.id.tvHP);
+            tvSpeed = (TextView) itemView.findViewById(R.id.tvSpeed);
+            tvStr = (TextView) itemView.findViewById(R.id.tvSTRscore);
+            tvDex = (TextView) itemView.findViewById(R.id.tvDEXscore);
+            tvCon = (TextView) itemView.findViewById(R.id.tvCONscore);
+            tvWis = (TextView) itemView.findViewById(R.id.tvWISscore);
+            tvIntel = (TextView) itemView.findViewById(R.id.tvINTscore);
+            tvCha = (TextView) itemView.findViewById(R.id.tvCHAscore);
+            tvSkills = (TextView) itemView.findViewById(R.id.tvSkills);
 
             //Assigning listeners
             tvName.setOnClickListener(this);
@@ -149,7 +147,6 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
             tvIntel.setOnClickListener(this);
             tvCha.setOnClickListener(this);
             tvSkills.setOnClickListener(this);
-            tvActions.setOnClickListener(this);
 
         }
 
