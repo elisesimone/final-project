@@ -108,11 +108,12 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
         holder.tvAc.setText("AC: "+monsters.get(position).getAc());
         holder.tvHp.setText("HP: "+monsters.get(position).getHp());
         holder.tvSpeed.setText("Speed: "+monsters.get(position).getSpeed()+" ft.");
-        holder.tvStr.setText("STR: "+monsters.get(position).getStr());
-        holder.tvDex.setText("DEX: "+monsters.get(position).getDex());
-        holder.tvCon.setText("CON: "+monsters.get(position).getCon());
-        holder.tvWis.setText("WIS: "+monsters.get(position).getWis());
-        holder.tvIntel.setText("INT: "+monsters.get(position).getIntel());
+        holder.tvStr.setText(monsters.get(position).getStr());
+        holder.tvDex.setText(monsters.get(position).getDex());
+        holder.tvCon.setText(monsters.get(position).getCon());
+        holder.tvWis.setText(monsters.get(position).getWis());
+        holder.tvIntel.setText(monsters.get(position).getIntel());
+        holder.tvCha.setText(monsters.get(position).getCha());
     }
 
     @Override
@@ -145,18 +146,18 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
             this.listener = listener;
 
             //Mapping views
-            tvName = (TextView) itemView.findViewById(R.id.tvName2);
-            tvType = (TextView) itemView.findViewById(R.id.tvType2);
-            tvChallenge = (TextView) itemView.findViewById(R.id.tvChallenge2);
-            tvAc = (TextView) itemView.findViewById(R.id.tvAC2);
-            tvHp = (TextView) itemView.findViewById(R.id.tvHP2);
-            tvSpeed = (TextView) itemView.findViewById(R.id.tvSpeed2);
-            tvStr = (TextView) itemView.findViewById(R.id.tvSTRscore2);
-            tvDex = (TextView) itemView.findViewById(R.id.tvDEXscore2);
-            tvCon = (TextView) itemView.findViewById(R.id.tvCONscore2);
-            tvWis = (TextView) itemView.findViewById(R.id.tvWISscore2);
-            tvIntel = (TextView) itemView.findViewById(R.id.tvINTscore2);
-            tvCha = (TextView) itemView.findViewById(R.id.tvCHAscore2);
+            tvName = (TextView) itemView.findViewById(R.id.tvName1);
+            tvType = (TextView) itemView.findViewById(R.id.tvType1);
+            tvChallenge = (TextView) itemView.findViewById(R.id.tvCR1);
+            tvAc = (TextView) itemView.findViewById(R.id.tvAC1);
+            tvHp = (TextView) itemView.findViewById(R.id.tvHP1);
+            tvSpeed = (TextView) itemView.findViewById(R.id.tvSpeed1);
+            tvStr = (TextView) itemView.findViewById(R.id.tvSTRscore1);
+            tvDex = (TextView) itemView.findViewById(R.id.tvDEXscore1);
+            tvCon = (TextView) itemView.findViewById(R.id.tvCONscore1);
+            tvWis = (TextView) itemView.findViewById(R.id.tvWISscore1);
+            tvIntel = (TextView) itemView.findViewById(R.id.tvINTscore1);
+            tvCha = (TextView) itemView.findViewById(R.id.tvCHAscore1);
 
             //Assigning listeners
             tvName.setOnClickListener(this);
