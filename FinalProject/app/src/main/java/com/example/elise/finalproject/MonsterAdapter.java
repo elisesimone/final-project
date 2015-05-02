@@ -40,17 +40,27 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
 
                 //Getting the monster information for the item clicked on
                 String name = monsters.get(position).getName();
-                String ac = monsters.get(position).getAc();
-                Integer hp = monsters.get(position).getHp();
-                Integer speed = monsters.get(position).getSpeed();
-                Integer str = monsters.get(position).getStr();
-                Integer dex = monsters.get(position).getDex();
-                Integer con = monsters.get(position).getCon();
-                Integer intel = monsters.get(position).getIntel();
-                Integer wis = monsters.get(position).getWis();
-                Integer cha = monsters.get(position).getCha();
+                String type = monsters.get(position).getType();
+                String alignment = monsters.get(position).getAlignment();
+                int ac = monsters.get(position).getAc();
+                int hp = monsters.get(position).getHp();
+                int speed = monsters.get(position).getSpeed();
+                int str = monsters.get(position).getStr();
+                int dex = monsters.get(position).getDex();
+                int con = monsters.get(position).getCon();
+                int intel = monsters.get(position).getIntel();
+                int wis = monsters.get(position).getWis();
+                int cha = monsters.get(position).getCha();
                 String skills = monsters.get(position).getSkills();
+                String savingThrows = monsters.get(position).getSavingThrows();
+                String damageImmunities = monsters.get(position).getDamageImmunities();
+                String damageResistance = monsters.get(position).getDamageResistance();
+                String conditionImmunities = monsters.get(position).getConditionImmunities();
+                String senses = monsters.get(position).getSenses();
+                String languages = monsters.get(position).getLanguages();
+                int challenge = monsters.get(position).getChallenge();
                 ArrayList actions = monsters.get(position).getActions();
+                ArrayList special = monsters.get(position).getSpecial();
 
                 //Adding a new intent with flags because the adapter is not an activity
                 Intent intent = new Intent(context, SecondActivity.class);
@@ -58,7 +68,9 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                 //Adding the strings to the new intent
-                intent.putExtra("name", name);
+                intent.putExtra("name",name);
+                intent.putExtra("type",type);
+                intent.putExtra("alignment",alignment);
                 intent.putExtra("ac",ac);
                 intent.putExtra("hp",hp);
                 intent.putExtra("speed",speed);
@@ -69,7 +81,15 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
                 intent.putExtra("wis",wis);
                 intent.putExtra("cha",cha);
                 intent.putExtra("skills",skills);
+                intent.putExtra("savingThrows",savingThrows);
+                intent.putExtra("damageImmunities",damageImmunities);
+                intent.putExtra("damageResistance",damageResistance);
+                intent.putExtra("conditionImmunities",conditionImmunities);
+                intent.putExtra("senses",senses);
+                intent.putExtra("languages",languages);
+                intent.putExtra("challenge",challenge);
                 intent.putExtra("actions",actions);
+                intent.putExtra("special",special);
 
                 //Start the second activity
                 context.startActivity(intent);
@@ -82,7 +102,9 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
     @Override
     //Assigns values from the monsters list to the views
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.tvName.setText("Name: "+monsters.get(position).getName());
+        holder.tvName.setText(monsters.get(position).getName());
+        holder.tvType.setText(monsters.get(position).getType());
+        holder.tvChallenge.setText("Challenge: "+ monsters.get(position).getChallenge()+" XP");
         holder.tvAc.setText("AC: "+monsters.get(position).getAc());
         holder.tvHp.setText("HP: "+monsters.get(position).getHp());
         holder.tvSpeed.setText("Speed: "+monsters.get(position).getSpeed()+" ft.");
@@ -91,7 +113,6 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
         holder.tvCon.setText("CON: "+monsters.get(position).getCon());
         holder.tvWis.setText("WIS: "+monsters.get(position).getWis());
         holder.tvIntel.setText("INT: "+monsters.get(position).getIntel());
-        holder.tvSkills.setText("Skills: "+monsters.get(position).getSkills());
     }
 
     @Override
@@ -106,6 +127,8 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
         ItemClickListener listener;
 
         TextView tvName;
+        TextView tvType;
+        TextView tvChallenge;
         TextView tvAc;
         TextView tvHp;
         TextView tvSpeed;
@@ -115,7 +138,6 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
         TextView tvWis;
         TextView tvIntel;
         TextView tvCha;
-        TextView tvSkills;
 
         //ViewHolder constructor maps views and assigns listeners to each view
         public ViewHolder (View itemView, ItemClickListener listener){
@@ -123,20 +145,23 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
             this.listener = listener;
 
             //Mapping views
-            tvName = (TextView) itemView.findViewById(R.id.tvName);
-            tvAc = (TextView) itemView.findViewById(R.id.tvAC);
-            tvHp = (TextView) itemView.findViewById(R.id.tvHP);
-            tvSpeed = (TextView) itemView.findViewById(R.id.tvSpeed);
-            tvStr = (TextView) itemView.findViewById(R.id.tvSTRscore);
-            tvDex = (TextView) itemView.findViewById(R.id.tvDEXscore);
-            tvCon = (TextView) itemView.findViewById(R.id.tvCONscore);
-            tvWis = (TextView) itemView.findViewById(R.id.tvWISscore);
-            tvIntel = (TextView) itemView.findViewById(R.id.tvINTscore);
-            tvCha = (TextView) itemView.findViewById(R.id.tvCHAscore);
-            tvSkills = (TextView) itemView.findViewById(R.id.tvSkills);
+            tvName = (TextView) itemView.findViewById(R.id.tvName2);
+            tvType = (TextView) itemView.findViewById(R.id.tvType2);
+            tvChallenge = (TextView) itemView.findViewById(R.id.tvChallenge2);
+            tvAc = (TextView) itemView.findViewById(R.id.tvAC2);
+            tvHp = (TextView) itemView.findViewById(R.id.tvHP2);
+            tvSpeed = (TextView) itemView.findViewById(R.id.tvSpeed2);
+            tvStr = (TextView) itemView.findViewById(R.id.tvSTRscore2);
+            tvDex = (TextView) itemView.findViewById(R.id.tvDEXscore2);
+            tvCon = (TextView) itemView.findViewById(R.id.tvCONscore2);
+            tvWis = (TextView) itemView.findViewById(R.id.tvWISscore2);
+            tvIntel = (TextView) itemView.findViewById(R.id.tvINTscore2);
+            tvCha = (TextView) itemView.findViewById(R.id.tvCHAscore2);
 
             //Assigning listeners
             tvName.setOnClickListener(this);
+            tvType.setOnClickListener(this);
+            tvChallenge.setOnClickListener(this);
             tvAc.setOnClickListener(this);
             tvHp.setOnClickListener(this);
             tvSpeed.setOnClickListener(this);
@@ -146,7 +171,6 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
             tvWis.setOnClickListener(this);
             tvIntel.setOnClickListener(this);
             tvCha.setOnClickListener(this);
-            tvSkills.setOnClickListener(this);
 
         }
 
