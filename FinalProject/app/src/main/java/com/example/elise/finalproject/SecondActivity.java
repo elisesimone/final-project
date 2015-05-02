@@ -1,6 +1,8 @@
 package com.example.elise.finalproject;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -40,6 +42,9 @@ public class SecondActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_monster);
+
+        //Request instance of SharedPreferences
+        SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
 
         //Mapping views
         name = (TextView) findViewById(R.id.tvName);
