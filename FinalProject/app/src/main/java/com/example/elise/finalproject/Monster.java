@@ -12,7 +12,9 @@ public class Monster {
 
     //Attributes
     private String name;
-    private String ac;
+    private String type;
+    private String alignment;
+    private int ac;
     private int hp;
     private int speed;
     private int str;
@@ -33,14 +35,16 @@ public class Monster {
     private ArrayList special;
 
     //Constructor
-    public Monster(String name, String ac, int hp, int speed,
-                   int str, int dex, int con, int intel,
+    public Monster(String name, String type, String alignment, int ac,
+                   int hp, int speed, int str, int dex, int con, int intel,
                    int wis, int cha, String skills, String savingThrows,
                    String damageImmunities, String damageResistance,
                    String conditionImmunities, String senses,
                    String languages, int challenge, ArrayList actions,
                    ArrayList special){
         this.name = name;
+        this.type = type;
+        this.alignment = alignment;
         this.ac = ac;
         this.hp = hp;
         this.speed = speed;
@@ -67,7 +71,15 @@ public class Monster {
         return name;
     }
 
-    public String getAc(){
+    public String getType() {
+        return type;
+    }
+
+    public String getAlignment() {
+        return alignment;
+    }
+
+    public int getAc(){
         return ac;
     }
 
