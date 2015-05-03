@@ -31,7 +31,7 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //Inflates layout to repeat for each monster in the list
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_monster, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_second, parent, false);
 
         //Create instance of the ViewHolder to handle when the user clicks on a monster
         ViewHolder viewHolder = new ViewHolder(view, new ViewHolder.ItemClickListener(){
@@ -42,15 +42,15 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
                 String name = monsters.get(position).getName();
                 String type = monsters.get(position).getType();
                 String alignment = monsters.get(position).getAlignment();
-                int ac = monsters.get(position).getAc();
-                int hp = monsters.get(position).getHp();
-                int speed = monsters.get(position).getSpeed();
-                int str = monsters.get(position).getStr();
-                int dex = monsters.get(position).getDex();
-                int con = monsters.get(position).getCon();
-                int intel = monsters.get(position).getIntel();
-                int wis = monsters.get(position).getWis();
-                int cha = monsters.get(position).getCha();
+                String ac = Integer.toString(monsters.get(position).getAc());
+                String hp = Integer.toString(monsters.get(position).getHp());
+                String speed = Integer.toString(monsters.get(position).getSpeed());
+                String str = Integer.toString(monsters.get(position).getStr());
+                String dex = Integer.toString(monsters.get(position).getDex());
+                String con = Integer.toString(monsters.get(position).getCon());
+                String intel = Integer.toString(monsters.get(position).getIntel());
+                String wis = Integer.toString(monsters.get(position).getWis());
+                String cha = Integer.toString(monsters.get(position).getCha());
                 String skills = monsters.get(position).getSkills();
                 String savingThrows = monsters.get(position).getSavingThrows();
                 String damageImmunities = monsters.get(position).getDamageImmunities();
@@ -58,7 +58,7 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
                 String conditionImmunities = monsters.get(position).getConditionImmunities();
                 String senses = monsters.get(position).getSenses();
                 String languages = monsters.get(position).getLanguages();
-                int challenge = monsters.get(position).getChallenge();
+                String challenge = Integer.toString(monsters.get(position).getChallenge());
                 ArrayList actions = monsters.get(position).getActions();
                 ArrayList special = monsters.get(position).getSpecial();
 
@@ -83,7 +83,7 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
                 intent.putExtra("skills",skills);
                 intent.putExtra("savingThrows",savingThrows);
                 intent.putExtra("damageImmunities",damageImmunities);
-                intent.putExtra("damageResistance",damageResistance);
+                intent.putExtra("damageResistances",damageResistance);
                 intent.putExtra("conditionImmunities",conditionImmunities);
                 intent.putExtra("senses",senses);
                 intent.putExtra("languages",languages);
@@ -108,12 +108,12 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
         holder.tvAc.setText("AC: "+monsters.get(position).getAc());
         holder.tvHp.setText("HP: "+monsters.get(position).getHp());
         holder.tvSpeed.setText("Speed: "+monsters.get(position).getSpeed()+" ft.");
-        holder.tvStr.setText(monsters.get(position).getStr());
-        holder.tvDex.setText(monsters.get(position).getDex());
-        holder.tvCon.setText(monsters.get(position).getCon());
-        holder.tvWis.setText(monsters.get(position).getWis());
-        holder.tvIntel.setText(monsters.get(position).getIntel());
-        holder.tvCha.setText(monsters.get(position).getCha());
+        holder.tvStr.setText(""+monsters.get(position).getStr());
+        holder.tvDex.setText(""+monsters.get(position).getDex());
+        holder.tvCon.setText(""+monsters.get(position).getCon());
+        holder.tvWis.setText(""+monsters.get(position).getWis());
+        holder.tvIntel.setText(""+monsters.get(position).getIntel());
+        holder.tvCha.setText(""+monsters.get(position).getCha());
     }
 
     @Override
