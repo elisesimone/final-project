@@ -1,3 +1,5 @@
+package com.example.elise.finalproject;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
@@ -5,10 +7,10 @@ import java.util.ArrayList;
  * Created by Alex on 5/4/2015.
  */
 public class EncounterCalculator {
-    private int partySize;
-    private int partyLvl;
-    private int numMonsters;
-    private int CR;
+
+    private int[] monsterXp = new int[]{10,25,50,100,200,450,700,1100,1800,2300,2900,3900,
+                                        5000,5900,7200,8400,10000,11500,13000,15000,18000,
+                                        20000,22000,25000,27500,30000,32500,36500};
     private int[] xpThreshold1 = new int[]{25,50,75,100};
     private int[] xpThreshold2 = new int[]{50,100,150,200};
     private int[] xpThreshold3 = new int[]{75,150,225,400};
@@ -39,12 +41,65 @@ public class EncounterCalculator {
 
     }
 
+    /*
+    calcPartyThreshold
+    Calculates the parties total XP for the Easy, Medium, Hard, and Deadly
+    encounter thresholds.
+     */
     private int[] calcPartyThreshold(int partySize, int partyLvl){
         int[] tmpXpThreshold = new int[4];
         for(int i=0; i<4; i++){
             tmpXpThreshold[i] = xpThresholds[partyLvl][i]*partySize;
         }
         return tmpXpThreshold;
+    }
+
+    /*
+    calcMonsterXp
+    Calculates the total XP of all monsters in the encounter.
+    This result is used for comparison with the party xp threshold.
+     */
+    private int calcMonsterXp(int numMonsters, int CR){
+        double multiplier = 1; //Depending on the number of monsters, a multiplier is applied to the total
+        if(numMonsters>1){
+            if(numMonsters == 2)
+                multiplier = 1.5;
+            else if(numMonsters<=6)
+                multiplier = 2;
+            else if(numMonsters<=10)
+                multiplier = 2.5;
+            else if(numMonsters<=14)
+                multiplier = 3;
+            else
+                multiplier = 4;
+        }
+
+        return (int)((numMonsters*monsterXp[CR])*multiplier);
+
+    }
+    /*
+    calculateEncounter
+    Compares the parties XP thresholds to the total XP of the monsters then assigns the
+    appropriate difficulty level to the encounter.
+     */
+    public String calculateEncounter(int partySize, int partyLvl, int numMonsters, int CR){
+        int[] tempXpThreshold;
+        int monsterXP;
+        String result = "N/A";
+        tempXpThreshold = calcPartyThreshold(partySize,partyLvl);
+        monsterXP = calcMonsterXp(numMonsters,CR);
+        if(monsterXP<tempXpThreshold[0])
+            result = "Trivial";
+        else if(monsterXP>=tempXpThreshold[0] && monsterXP<tempXpThreshold[1])
+            result = "Easy";
+        else if(monsterXP==tempXpThreshold[1] && monsterXP<tempXpThreshold[2])
+            result = "Medium";
+        else if(monsterXP==tempXpThreshold[2] && monsterXP<tempXpThreshold[3])
+            result = "Hard";
+        else
+            result = "Deadly";
+
+        return result;
     }
 
 
