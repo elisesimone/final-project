@@ -7,6 +7,6 @@ import java.util.Comparator;
  */
 public class MonsterChallengeComparator implements Comparator<Monster> {
     public int compare(Monster m1, Monster m2) {
-        return Integer.compare(m1.getChallenge(),m2.getChallenge());
+        return ((Monster)m1).getChallenge().compareTo(((Monster)m2).getChallenge());
     }
 }

@@ -84,7 +84,7 @@ public class SecondActivity extends ActionBarActivity {
 
         //Assign values from the monsters list to the views
         name.setText(getIntent().getStringExtra("name"));
-        challenge.setText("Challenge: "+getIntent().getStringExtra("challenge")+" XP");
+        challenge.setText("CR: "+getIntent().getStringExtra("challenge"));
         alignment.setText(getIntent().getStringExtra("alignment"));
         type.setText(getIntent().getStringExtra("type"));
         ac.setText("AC: "+getIntent().getStringExtra("ac"));

@@ -2,9 +2,10 @@
 <resources>
 
     <string-array name="sortOptions">
-        <item>Armor Class</item>
+        <item>Alignment</item>
         <item>Challenge Rating</item>
         <item>Name</item>
+        <item>Type</item>
     </string-array>
 
     <string name="app_name">FinalProject</string>

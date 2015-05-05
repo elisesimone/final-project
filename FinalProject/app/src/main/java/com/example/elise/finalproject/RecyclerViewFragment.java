@@ -161,21 +161,21 @@ public class RecyclerViewFragment extends Fragment {
         special15.add(new String("Rampage. When the gnoll reduces a creature to 0 hit points with a melee attack on its turn, the gnoll can take a bonus action to move up to half its speed and make a bite attack."));
 
 
-        monsters.add(new Monster("Ape","Medium beast","Unaligned",12,19,30,16,14,14,6,12,7,"Athletics +5, Perception +3","-","-","-","-","Passive Perception 13","-",100,actions1,special1));
-        monsters.add(new Monster("Blink Dog","Medium fey","Lawful Good",13,22,40,12,17,12,10,13,11,"Perception +3, Stealth +5","-","-","-","-","Passive Perception 13","Understands Sylvan but can't speak it",50,actions2,special2));
-        monsters.add(new Monster("Boar","Medium beast","Unaligned",11,11,40,13,11,12,2,9,5,"-","-","-","-","-","Passive Perception 13","-",100,actions3,special3));
-        monsters.add(new Monster("Phase Spider","Large monstrosity","Unaligned",13,32,30,15,15,12,6,10,6,"Stealth +6","-","-","-","-","Darkvision 60 ft., Passive Perception 10","-",700,actions4,special4));
-        monsters.add(new Monster("Quipper","Tiny beast","Unaligned",13,1,0,2,16,9,1,7,2,"-","-","-","-","-","Darkvision 60 ft., Passive Perception 8","-",10,actions5,special5));
-        monsters.add(new Monster("Bandit","Medium humanoid (any race)","Any non-lawful alignment",12,11,30,11,12,12,10,10,10,"-","-","-","-","-","Passive Perception 10","Any 1 language (usually Common)",25,actions6,special6));
-        monsters.add(new Monster("Owlbear","Large monstrosity","Unaligned",13,59,40,20,12,17,3,12,7,"Perception +3","-","-","-","-","Darkvision 60 ft., Passive Perception 13","-",700,actions7,special7));
-        monsters.add(new Monster("Commoner","Medium humanoid (any race)","Any alignment",10,4,30,10,10,10,10,10,10,"-","-","-","-","-","Passive Perception 10","Any 1 language (usually Common)",10,actions8,special8));
-        monsters.add(new Monster("Crawling Claw","Tiny undead","Neutral evil",12,2,20,13,14,11,5,10,4,"-","-","poison","-","charmed, exhaustion, poisoned","Blind sight 30 ft. (blind beyond this radius), Passive Perception 10","Understands Common but can't speak",10,actions9,special9));
-        monsters.add(new Monster("Zombie","Medium undead","Neutral evil",8,22,20,13,6,16,3,6,5,"-","WIS +0","poison","-","poisoned","Darkvision 60 ft., Passive Perception 8","Understands the languages it knew in life, but can't speak",50,actions10,special10));
-        monsters.add(new Monster("Tarrasque","Gargantuan monstrosity (titan)","Unaligned",25,676,40,30,11,30,3,11,11,"-","INT +5, WIS +9, CHA +9","fire; poison; bludgeoning, piercing, and slashing from non-magical weapons","-","charmed, frightened, paralyzed, poisoned","Blindsight 120ft., Passive Perception 10","-",155000,actions11,special11));
-        monsters.add(new Monster("Dragon Turtle","Gargantuan dragon","Neutral",20,341,20,25,10,20,10,12,12,"-","DEX +5, CON +10, WIS +6","-","fire","-","Darkvision 120 ft., Passive Perception 11","Aquan, Draconic",18000,actions12,special12));
-        monsters.add(new Monster("Gargoyle","Medium elemental","Chaotic evil",15,52,30,15,11,16,6,11,7,"-","-","poison","bludgeoning, piercing, and slashing from non-magical weapons that aren't adamantine","exhaustion, petrified, poisoned","Darkvision 60 ft., Passive Perception 10","Terran",450,actions13,special13));
-        monsters.add(new Monster("Brown Bear","Large beast","Unaligned",11,34,40,19,10,16,2,13,7,"Perception +3","-","-","-","-","Passive Perception 13","-",200,actions14,special14));
-        monsters.add(new Monster("Gnoll","Medium humanoid (gnoll)","Chaotic evil",15,22,30,14,12,11,6,10,7,"-","-","-","-","-","Darkvision 60 ft., Passive Perception 10","Gnoll",100,actions15,special15));
+        monsters.add(new Monster("Ape","Medium beast","Unaligned",12,19,30,16,14,14,6,12,7,"Athletics +5, Perception +3","-","-","-","-","Passive Perception 13","-","1/2",actions1,special1));
+        monsters.add(new Monster("Blink Dog","Medium fey","Lawful Good",13,22,40,12,17,12,10,13,11,"Perception +3, Stealth +5","-","-","-","-","Passive Perception 13","Understands Sylvan but can't speak it","1/4",actions2,special2));
+        monsters.add(new Monster("Boar","Medium beast","Unaligned",11,11,40,13,11,12,2,9,5,"-","-","-","-","-","Passive Perception 13","-","1/2",actions3,special3));
+        monsters.add(new Monster("Phase Spider","Large monstrosity","Unaligned",13,32,30,15,15,12,6,10,6,"Stealth +6","-","-","-","-","Darkvision 60 ft., Passive Perception 10","-","3",actions4,special4));
+        monsters.add(new Monster("Quipper","Tiny beast","Unaligned",13,1,0,2,16,9,1,7,2,"-","-","-","-","-","Darkvision 60 ft., Passive Perception 8","-","0",actions5,special5));
+        monsters.add(new Monster("Bandit","Medium humanoid (any race)","Any non-lawful alignment",12,11,30,11,12,12,10,10,10,"-","-","-","-","-","Passive Perception 10","Any 1 language (usually Common)","1/8",actions6,special6));
+        monsters.add(new Monster("Owlbear","Large monstrosity","Unaligned",13,59,40,20,12,17,3,12,7,"Perception +3","-","-","-","-","Darkvision 60 ft., Passive Perception 13","-","3",actions7,special7));
+        monsters.add(new Monster("Commoner","Medium humanoid (any race)","Any alignment",10,4,30,10,10,10,10,10,10,"-","-","-","-","-","Passive Perception 10","Any 1 language (usually Common)","0",actions8,special8));
+        monsters.add(new Monster("Crawling Claw","Tiny undead","Neutral evil",12,2,20,13,14,11,5,10,4,"-","-","poison","-","charmed, exhaustion, poisoned","Blind sight 30 ft. (blind beyond this radius), Passive Perception 10","Understands Common but can't speak","0",actions9,special9));
+        monsters.add(new Monster("Zombie","Medium undead","Neutral evil",8,22,20,13,6,16,3,6,5,"-","WIS +0","poison","-","poisoned","Darkvision 60 ft., Passive Perception 8","Understands the languages it knew in life, but can't speak","1/4",actions10,special10));
+        monsters.add(new Monster("Tarrasque","Gargantuan monstrosity (titan)","Unaligned",25,676,40,30,11,30,3,11,11,"-","INT +5, WIS +9, CHA +9","fire; poison; bludgeoning, piercing, and slashing from non-magical weapons","-","charmed, frightened, paralyzed, poisoned","Blindsight 120ft., Passive Perception 10","-","30",actions11,special11));
+        monsters.add(new Monster("Dragon Turtle","Gargantuan dragon","Neutral",20,341,20,25,10,20,10,12,12,"-","DEX +5, CON +10, WIS +6","-","fire","-","Darkvision 120 ft., Passive Perception 11","Aquan, Draconic","17",actions12,special12));
+        monsters.add(new Monster("Gargoyle","Medium elemental","Chaotic evil",15,52,30,15,11,16,6,11,7,"-","-","poison","bludgeoning, piercing, and slashing from non-magical weapons that aren't adamantine","exhaustion, petrified, poisoned","Darkvision 60 ft., Passive Perception 10","Terran","2",actions13,special13));
+        monsters.add(new Monster("Brown Bear","Large beast","Unaligned",11,34,40,19,10,16,2,13,7,"Perception +3","-","-","-","-","Passive Perception 13","-","1",actions14,special14));
+        monsters.add(new Monster("Gnoll","Medium humanoid (gnoll)","Chaotic evil",15,22,30,14,12,11,6,10,7,"-","-","-","-","-","Darkvision 60 ft., Passive Perception 10","Gnoll","1/2",actions15,special15));
 
         Collections.sort(monsters, new MonsterNameComparator());
         return monsters;
