@@ -1,6 +1,8 @@
 package com.example.elise.finalproject;
 
 import android.app.Fragment;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
@@ -46,6 +48,9 @@ public class RecyclerViewFragment extends Fragment {
 
         //Creating a list of monsters
         List<Monster> monsters = monsters();
+
+        Context context = this.getActivity();
+        SharedPreferences preferences = context.getSharedPreferences("prefs",Context.MODE_PRIVATE);
 
         //Setting the adapter
         recyclerMonsters.setAdapter(new MonsterAdapter(monsters,getActivity().getApplicationContext()));

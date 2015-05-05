@@ -54,10 +54,6 @@ public class SecondActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_monster);
 
-
-        //Request instance of SharedPreferences
-        SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
-
         //Mapping views for when user is brought to page with more information
         name = (TextView) findViewById(R.id.tvName);
         challenge = (TextView) findViewById(R.id.tvCR);
