@@ -49,8 +49,23 @@ public class RecyclerViewFragment extends Fragment {
         //Creating a list of monsters
         List<Monster> monsters = monsters();
 
-        Context context = this.getActivity();
-        SharedPreferences preferences = context.getSharedPreferences("prefs",Context.MODE_PRIVATE);
+        //Context context = this.getActivity();
+        //SharedPreferences preferences = context.getSharedPreferences("prefs",Context.MODE_PRIVATE);
+
+        //Pull arguments from passed bundle
+        String itemSelected = getArguments().getString("selectedItem","Name");
+
+        //String itemSelected = preferences.getString("selectedItem","Name");
+
+        if (itemSelected.equals("Alignment")){
+            Collections.sort(monsters, new MonsterAlignmentComparator());
+        } else if (itemSelected.equals("Challenge Rating")){
+            Collections.sort(monsters, new MonsterChallengeComparator());
+        } else if (itemSelected.equals("Name")){
+            Collections.sort(monsters, new MonsterNameComparator());
+        } else if (itemSelected.equals("Type")){
+            Collections.sort(monsters, new MonsterTypeComparator());
+        }
 
         //Setting the adapter
         recyclerMonsters.setAdapter(new MonsterAdapter(monsters,getActivity().getApplicationContext()));
@@ -182,7 +197,6 @@ public class RecyclerViewFragment extends Fragment {
         monsters.add(new Monster("Brown Bear","Large beast","Unaligned",11,34,40,19,10,16,2,13,7,"Perception +3","-","-","-","-","Passive Perception 13","-","1",actions14,special14));
         monsters.add(new Monster("Gnoll","Medium humanoid (gnoll)","Chaotic evil",15,22,30,14,12,11,6,10,7,"-","-","-","-","-","Darkvision 60 ft., Passive Perception 10","Gnoll","1/2",actions15,special15));
 
-        Collections.sort(monsters, new MonsterNameComparator());
         return monsters;
     }
 
