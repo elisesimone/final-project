@@ -2,13 +2,11 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:background="#94cbc489"
-    >
+    android:orientation="vertical">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="12dp"
+    android:layout_height="match_parent"
+
     android:orientation="vertical"
     android:background="#94cbc489">
 
@@ -20,21 +18,24 @@
         android:id="@+id/tvName"
         android:textColor="#ff38201f"
         android:textIsSelectable="false"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginLeft="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Type"
-        android:id="@+id/tvType" />
+        android:id="@+id/tvType"
+        android:layout_marginLeft="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Alignment"
-        android:id="@+id/tvAlignment" />
+        android:id="@+id/tvAlignment"
+        android:layout_marginLeft="12dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -51,21 +52,24 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Armor Class: "
         android:id="@+id/tvAC"
-        android:autoText="false" />
+        android:autoText="false"
+        android:layout_marginLeft="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Hit Points: "
-        android:id="@+id/tvHP" />
+        android:id="@+id/tvHP"
+        android:layout_marginLeft="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Speed: "
-        android:id="@+id/tvSpeed" />
+        android:id="@+id/tvSpeed"
+        android:layout_marginLeft="12dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -79,7 +83,8 @@
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:useDefaultMargins="true">
+        android:useDefaultMargins="true"
+        android:layout_marginLeft="12dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -204,28 +209,32 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Skills: Perception +3"
-        android:id="@+id/tvSkills" />
+        android:id="@+id/tvSkills"
+        android:layout_marginLeft="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Senses: Passive Perception 13"
-        android:id="@+id/tvSenses" />
+        android:id="@+id/tvSenses"
+        android:layout_marginLeft="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Languages: -"
-        android:id="@+id/tvLang" />
+        android:id="@+id/tvLang"
+        android:layout_marginLeft="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Challenge: 1 (200 XP)"
-        android:id="@+id/tvCR" />
+        android:id="@+id/tvCR"
+        android:layout_marginLeft="12dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -241,28 +250,32 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Saving Throws: -"
-        android:id="@+id/tvSavingThrows"/>
+        android:id="@+id/tvSavingThrows"
+        android:layout_marginLeft="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Damage Immunities: -"
-        android:id="@+id/tvDamageImmunities"/>
+        android:id="@+id/tvDamageImmunities"
+        android:layout_marginLeft="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Damage Resistances: -"
-        android:id="@+id/tvDamageResistances"/>
+        android:id="@+id/tvDamageResistances"
+        android:layout_marginLeft="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Condition Immunities: -"
-        android:id="@+id/tvConditionImmunities"/>
+        android:id="@+id/tvConditionImmunities"
+        android:layout_marginLeft="12dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -279,14 +292,16 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Actions:"
         android:textStyle="bold"
-        android:id="@+id/tvActionsTitle"/>
+        android:id="@+id/tvActionsTitle"
+        android:layout_marginLeft="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="None"
-        android:id="@+id/tvActions"/>
+        android:id="@+id/tvActions"
+        android:layout_marginLeft="12dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -303,14 +318,16 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Special:"
         android:textStyle="bold"
-        android:id="@+id/tvSpecialTitle"/>
+        android:id="@+id/tvSpecialTitle"
+        android:layout_marginLeft="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="None"
-        android:id="@+id/tvSpecial"/>
+        android:id="@+id/tvSpecial"
+        android:layout_marginLeft="12dp" />
 
 </LinearLayout>
 </ScrollView>

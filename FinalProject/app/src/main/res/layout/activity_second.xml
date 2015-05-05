@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:background="#94cbc489"
-    >
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
-        android:orientation="vertical"
-        android:background="#94cbc489"
-        >
 
-        <TextView
+    android:background="#94cbc489"
+    android:orientation="vertical"
+    android:id="@+id/mainPage">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/textView8"
+        android:background="#ff791019"
+        android:layout_marginBottom="10dp"
+        android:clickable="false" />
+
+    <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -21,184 +24,32 @@
             android:id="@+id/tvName1"
             android:textColor="#ff38201f"
             android:textIsSelectable="false"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginLeft="12dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Challenge: 1 (200 XP)"
-            android:id="@+id/tvCR1" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="CR: "
+        android:id="@+id/tvCR1"
+        android:layout_marginLeft="12dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Type"
-            android:id="@+id/tvType1" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Type:"
+        android:id="@+id/tvType1"
+        android:layout_marginLeft="12dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="5dp"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:id="@+id/textView11"
-            android:background="#ff791019"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Alignment: "
+        android:id="@+id/tvAlign1"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="10dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Armor Class: "
-            android:id="@+id/tvAC1"
-            android:autoText="false" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Hit Points: "
-            android:id="@+id/tvHP1" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Speed: "
-            android:id="@+id/tvSpeed1" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="5dp"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:id="@+id/textView12"
-            android:background="#ff791019"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp" />
-
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:useDefaultMargins="true">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="STR"
-                android:id="@+id/tvSTR1"
-                android:layout_row="0"
-                android:layout_column="0" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="19"
-                android:id="@+id/tvSTRscore1"
-                android:layout_row="1"
-                android:layout_column="0" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="DEX"
-                android:id="@+id/tvDEX1"
-                android:layout_row="0"
-                android:layout_column="1" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="CON"
-                android:id="@+id/tvCON1"
-                android:layout_row="0"
-                android:layout_column="2" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="INT"
-                android:id="@+id/tvINT1"
-                android:layout_row="0"
-                android:layout_column="3" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="WIS"
-                android:id="@+id/tvWIS1"
-                android:layout_row="0"
-                android:layout_column="4" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="CHA"
-                android:id="@+id/tvCHA1"
-                android:layout_row="0"
-                android:layout_column="5" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="10"
-                android:id="@+id/tvDEXscore1"
-                android:layout_row="1"
-                android:layout_column="1" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="16"
-                android:id="@+id/tvCONscore1"
-                android:layout_row="1"
-                android:layout_column="2" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="2"
-                android:id="@+id/tvINTscore1"
-                android:layout_row="1"
-                android:layout_column="3" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="13"
-                android:id="@+id/tvWISscore1"
-                android:layout_row="1"
-                android:layout_column="4" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="7"
-                android:id="@+id/tvCHAscore1"
-                android:layout_row="1"
-                android:layout_column="5" />
-        </GridLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="5dp"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:id="@+id/textView13"
-            android:background="#ff791019"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp" />
-
-    </LinearLayout>
-</ScrollView>
+</LinearLayout>

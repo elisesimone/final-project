@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -176,6 +177,7 @@ public class RecyclerViewFragment extends Fragment {
         monsters.add(new Monster("Brown Bear","Large beast","Unaligned",11,34,40,19,10,16,2,13,7,"Perception +3","-","-","-","-","Passive Perception 13","-",200,actions14,special14));
         monsters.add(new Monster("Gnoll","Medium humanoid (gnoll)","Chaotic evil",15,22,30,14,12,11,6,10,7,"-","-","-","-","-","Darkvision 60 ft., Passive Perception 10","Gnoll",100,actions15,special15));
 
+        Collections.sort(monsters, new MonsterNameComparator());
         return monsters;
     }
 

@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+
 /**
  * Created by Elise Johnson and Alex Gwaltney on 4/8/2015.
  */
@@ -37,6 +39,10 @@ public class SecondActivity extends Activity {
     TextView languages;
     TextView actions;
     TextView special;
+    ArrayList actionArray;
+    ArrayList specialArray;
+    String actionStr = "";
+    String specialStr = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,8 +96,18 @@ public class SecondActivity extends Activity {
         damageResistances.setText("Damage Resistances: "+ getIntent().getStringExtra("damageResistances"));
         senses.setText("Senses: "+getIntent().getStringExtra("senses"));
         languages.setText("Languages: "+getIntent().getStringExtra("languages"));
-        actions.setText(getIntent().getStringExtra("actions"));
-        special.setText(getIntent().getStringExtra("special"));
+        actionArray = getIntent().getStringArrayListExtra("actions");
+        specialArray = getIntent().getStringArrayListExtra("special");
+
+        for(int i=0; i<actionArray.size(); i++){
+            actionStr+= actionArray.get(i)+"\n\n";
+        }
+        actions.setText(actionStr);
+
+        for(int i=0; i<specialArray.size(); i++){
+            specialStr+=specialArray.get(i)+"\n\n";
+        }
+        special.setText(specialStr);
 
     }
 

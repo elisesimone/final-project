@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -88,8 +89,8 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
                 intent.putExtra("senses",senses);
                 intent.putExtra("languages",languages);
                 intent.putExtra("challenge",challenge);
-                intent.putExtra("actions",actions);
-                intent.putExtra("special",special);
+                intent.putStringArrayListExtra("actions",actions);
+                intent.putStringArrayListExtra("special",special);
 
                 //Start the second activity
                 context.startActivity(intent);
@@ -103,17 +104,11 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
     //Assigns values from the monsters list to the views
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.tvName.setText(monsters.get(position).getName());
+        holder.tvChallenge.setText("CR: "+ monsters.get(position).getChallenge());
         holder.tvType.setText(monsters.get(position).getType());
-        holder.tvChallenge.setText("Challenge: "+ monsters.get(position).getChallenge()+" XP");
-        holder.tvAc.setText("AC: "+monsters.get(position).getAc());
-        holder.tvHp.setText("HP: "+monsters.get(position).getHp());
-        holder.tvSpeed.setText("Speed: "+monsters.get(position).getSpeed()+" ft.");
-        holder.tvStr.setText(""+monsters.get(position).getStr());
-        holder.tvDex.setText(""+monsters.get(position).getDex());
-        holder.tvCon.setText(""+monsters.get(position).getCon());
-        holder.tvWis.setText(""+monsters.get(position).getWis());
-        holder.tvIntel.setText(""+monsters.get(position).getIntel());
-        holder.tvCha.setText(""+monsters.get(position).getCha());
+        holder.tvAlign.setText(monsters.get(position).getAlignment());
+
+
     }
 
     @Override
@@ -130,15 +125,9 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
         TextView tvName;
         TextView tvType;
         TextView tvChallenge;
-        TextView tvAc;
-        TextView tvHp;
-        TextView tvSpeed;
-        TextView tvStr;
-        TextView tvDex;
-        TextView tvCon;
-        TextView tvWis;
-        TextView tvIntel;
-        TextView tvCha;
+        TextView tvAlign;
+        LinearLayout mainPage;
+
 
         //ViewHolder constructor maps views and assigns listeners to each view
         public ViewHolder (View itemView, ItemClickListener listener){
@@ -149,29 +138,12 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
             tvName = (TextView) itemView.findViewById(R.id.tvName1);
             tvType = (TextView) itemView.findViewById(R.id.tvType1);
             tvChallenge = (TextView) itemView.findViewById(R.id.tvCR1);
-            tvAc = (TextView) itemView.findViewById(R.id.tvAC1);
-            tvHp = (TextView) itemView.findViewById(R.id.tvHP1);
-            tvSpeed = (TextView) itemView.findViewById(R.id.tvSpeed1);
-            tvStr = (TextView) itemView.findViewById(R.id.tvSTRscore1);
-            tvDex = (TextView) itemView.findViewById(R.id.tvDEXscore1);
-            tvCon = (TextView) itemView.findViewById(R.id.tvCONscore1);
-            tvWis = (TextView) itemView.findViewById(R.id.tvWISscore1);
-            tvIntel = (TextView) itemView.findViewById(R.id.tvINTscore1);
-            tvCha = (TextView) itemView.findViewById(R.id.tvCHAscore1);
+            tvAlign = (TextView) itemView.findViewById(R.id.tvAlign1);
+            mainPage = (LinearLayout) itemView.findViewById(R.id.mainPage);
 
             //Assigning listeners
-            tvName.setOnClickListener(this);
-            tvType.setOnClickListener(this);
-            tvChallenge.setOnClickListener(this);
-            tvAc.setOnClickListener(this);
-            tvHp.setOnClickListener(this);
-            tvSpeed.setOnClickListener(this);
-            tvStr.setOnClickListener(this);
-            tvDex.setOnClickListener(this);
-            tvCon.setOnClickListener(this);
-            tvWis.setOnClickListener(this);
-            tvIntel.setOnClickListener(this);
-            tvCha.setOnClickListener(this);
+            mainPage.setOnClickListener(this);
+
 
         }
 
