@@ -30,7 +30,7 @@ public class Monster {
     private String conditionImmunities;
     private String senses;
     private String languages;
-    private int challenge;
+    private String challenge;
     private ArrayList actions;
     private ArrayList special;
 
@@ -40,7 +40,7 @@ public class Monster {
                    int wis, int cha, String skills, String savingThrows,
                    String damageImmunities, String damageResistance,
                    String conditionImmunities, String senses,
-                   String languages, int challenge, ArrayList actions,
+                   String languages, String challenge, ArrayList actions,
                    ArrayList special){
         this.name = name;
         this.type = type;
@@ -142,7 +142,7 @@ public class Monster {
         return languages;
     }
 
-    public int getChallenge(){
+    public String getChallenge(){
         return challenge;
     }
 

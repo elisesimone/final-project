@@ -59,7 +59,7 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
                 String conditionImmunities = monsters.get(position).getConditionImmunities();
                 String senses = monsters.get(position).getSenses();
                 String languages = monsters.get(position).getLanguages();
-                String challenge = Integer.toString(monsters.get(position).getChallenge());
+                String challenge = monsters.get(position).getChallenge();
                 ArrayList actions = monsters.get(position).getActions();
                 ArrayList special = monsters.get(position).getSpecial();
 
