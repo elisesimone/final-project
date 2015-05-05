@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -14,7 +17,7 @@ import java.util.ArrayList;
  * Created by Elise Johnson and Alex Gwaltney on 4/8/2015.
  */
 
-public class SecondActivity extends Activity {
+public class SecondActivity extends ActionBarActivity {
 
     //Variables
     TextView name;
@@ -44,10 +47,13 @@ public class SecondActivity extends Activity {
     String actionStr = "";
     String specialStr = "";
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_monster);
+
 
         //Request instance of SharedPreferences
         SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
@@ -110,5 +116,7 @@ public class SecondActivity extends Activity {
         special.setText(specialStr);
 
     }
+
+
 
 }

@@ -181,4 +181,5 @@ public class RecyclerViewFragment extends Fragment {
         return monsters;
     }
 
+
 }
