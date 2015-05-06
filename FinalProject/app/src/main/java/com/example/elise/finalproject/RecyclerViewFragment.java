@@ -49,9 +49,6 @@ public class RecyclerViewFragment extends Fragment {
         //Creating a list of monsters
         List<Monster> monsters = monsters();
 
-        //Context context = this.getActivity();
-        //SharedPreferences preferences = context.getSharedPreferences("prefs",Context.MODE_PRIVATE);
-
         //Pull arguments from passed bundle
         String itemSelected = getArguments().getString("selectedItem","Name");
 
