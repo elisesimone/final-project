@@ -6,10 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -108,7 +106,6 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
         holder.tvType.setText(monsters.get(position).getType());
         holder.tvAlign.setText(monsters.get(position).getAlignment());
 
-
     }
 
     @Override
@@ -127,7 +124,6 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
         TextView tvChallenge;
         TextView tvAlign;
         LinearLayout mainPage;
-
 
         //ViewHolder constructor maps views and assigns listeners to each view
         public ViewHolder (View itemView, ItemClickListener listener){
