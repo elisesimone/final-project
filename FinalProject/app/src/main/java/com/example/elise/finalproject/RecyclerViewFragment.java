@@ -4,11 +4,14 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v7.widget.RecyclerView;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -50,9 +53,7 @@ public class RecyclerViewFragment extends Fragment {
         List<Monster> monsters = monsters();
 
         //Pull arguments from passed bundle
-        String itemSelected = getArguments().getString("selectedItem","Name");
-
-        //String itemSelected = preferences.getString("selectedItem","Name");
+        String itemSelected = getArguments().getString("selectedItem", "Name");
 
         if (itemSelected.equals("Alignment")){
             Collections.sort(monsters, new MonsterAlignmentComparator());

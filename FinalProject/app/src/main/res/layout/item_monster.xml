@@ -3,331 +3,333 @@
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     android:orientation="vertical">
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
 
-    android:orientation="vertical"
-    android:background="#94cbc489">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/monsterPage"
+            android:orientation="vertical"
+            android:background="#94cbc489">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Name"
-        android:id="@+id/tvName"
-        android:textColor="#ff38201f"
-        android:textIsSelectable="false"
-        android:textStyle="bold"
-        android:layout_marginLeft="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Name"
+                android:id="@+id/tvName"
+                android:textColor="#ff38201f"
+                android:textIsSelectable="false"
+                android:textStyle="bold"
+                android:layout_marginLeft="12dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Type"
-        android:id="@+id/tvType"
-        android:layout_marginLeft="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Type"
+                android:id="@+id/tvType"
+                android:layout_marginLeft="12dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Alignment"
-        android:id="@+id/tvAlignment"
-        android:layout_marginLeft="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Alignment"
+                android:id="@+id/tvAlignment"
+                android:layout_marginLeft="12dp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:id="@+id/textView"
-        android:background="#ff791019"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/textView"
+                android:background="#ff791019"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Armor Class: "
-        android:id="@+id/tvAC"
-        android:autoText="false"
-        android:layout_marginLeft="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Armor Class: "
+                android:id="@+id/tvAC"
+                android:autoText="false"
+                android:layout_marginLeft="12dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Hit Points: "
-        android:id="@+id/tvHP"
-        android:layout_marginLeft="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Hit Points: "
+                android:id="@+id/tvHP"
+                android:layout_marginLeft="12dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Speed: "
-        android:id="@+id/tvSpeed"
-        android:layout_marginLeft="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Speed: "
+                android:id="@+id/tvSpeed"
+                android:layout_marginLeft="12dp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:id="@+id/textView2"
-        android:background="#ff791019"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/textView2"
+                android:background="#ff791019"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
 
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:useDefaultMargins="true"
-        android:layout_marginLeft="12dp">
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:useDefaultMargins="true"
+                android:layout_marginLeft="12dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="STR"
-            android:id="@+id/tvSTR"
-            android:layout_row="0"
-            android:layout_column="0" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="STR"
+                    android:id="@+id/tvSTR"
+                    android:layout_row="0"
+                    android:layout_column="0" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="19"
-            android:id="@+id/tvSTRscore"
-            android:layout_row="1"
-            android:layout_column="0" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="19"
+                    android:id="@+id/tvSTRscore"
+                    android:layout_row="1"
+                    android:layout_column="0" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="DEX"
-            android:id="@+id/tvDEX"
-            android:layout_row="0"
-            android:layout_column="1" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="DEX"
+                    android:id="@+id/tvDEX"
+                    android:layout_row="0"
+                    android:layout_column="1" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="CON"
-            android:id="@+id/tvCON"
-            android:layout_row="0"
-            android:layout_column="2" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="CON"
+                    android:id="@+id/tvCON"
+                    android:layout_row="0"
+                    android:layout_column="2" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="INT"
-            android:id="@+id/tvINT"
-            android:layout_row="0"
-            android:layout_column="3" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="INT"
+                    android:id="@+id/tvINT"
+                    android:layout_row="0"
+                    android:layout_column="3" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="WIS"
-            android:id="@+id/tvWIS"
-            android:layout_row="0"
-            android:layout_column="4" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="WIS"
+                    android:id="@+id/tvWIS"
+                    android:layout_row="0"
+                    android:layout_column="4" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="CHA"
-            android:id="@+id/tvCHA"
-            android:layout_row="0"
-            android:layout_column="5" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="CHA"
+                    android:id="@+id/tvCHA"
+                    android:layout_row="0"
+                    android:layout_column="5" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="10"
-            android:id="@+id/tvDEXscore"
-            android:layout_row="1"
-            android:layout_column="1" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="10"
+                    android:id="@+id/tvDEXscore"
+                    android:layout_row="1"
+                    android:layout_column="1" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="16"
-            android:id="@+id/tvCONscore"
-            android:layout_row="1"
-            android:layout_column="2" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="16"
+                    android:id="@+id/tvCONscore"
+                    android:layout_row="1"
+                    android:layout_column="2" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="2"
-            android:id="@+id/tvINTscore"
-            android:layout_row="1"
-            android:layout_column="3" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="2"
+                    android:id="@+id/tvINTscore"
+                    android:layout_row="1"
+                    android:layout_column="3" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="13"
-            android:id="@+id/tvWISscore"
-            android:layout_row="1"
-            android:layout_column="4" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="13"
+                    android:id="@+id/tvWISscore"
+                    android:layout_row="1"
+                    android:layout_column="4" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="7"
-            android:id="@+id/tvCHAscore"
-            android:layout_row="1"
-            android:layout_column="5" />
-    </GridLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="7"
+                    android:id="@+id/tvCHAscore"
+                    android:layout_row="1"
+                    android:layout_column="5" />
+            </GridLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:id="@+id/textView3"
-        android:background="#ff791019"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/textView3"
+                android:background="#ff791019"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Skills: Perception +3"
-        android:id="@+id/tvSkills"
-        android:layout_marginLeft="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Skills: Perception +3"
+                android:id="@+id/tvSkills"
+                android:layout_marginLeft="12dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Senses: Passive Perception 13"
-        android:id="@+id/tvSenses"
-        android:layout_marginLeft="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Senses: Passive Perception 13"
+                android:id="@+id/tvSenses"
+                android:layout_marginLeft="12dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Languages: -"
-        android:id="@+id/tvLang"
-        android:layout_marginLeft="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Languages: -"
+                android:id="@+id/tvLang"
+                android:layout_marginLeft="12dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Challenge: 1 (200 XP)"
-        android:id="@+id/tvCR"
-        android:layout_marginLeft="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Challenge: 1 (200 XP)"
+                android:id="@+id/tvCR"
+                android:layout_marginLeft="12dp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:id="@+id/textView4"
-        android:background="#ff791019"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/textView4"
+                android:background="#ff791019"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Saving Throws: -"
-        android:id="@+id/tvSavingThrows"
-        android:layout_marginLeft="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Saving Throws: -"
+                android:id="@+id/tvSavingThrows"
+                android:layout_marginLeft="12dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Damage Immunities: -"
-        android:id="@+id/tvDamageImmunities"
-        android:layout_marginLeft="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Damage Immunities: -"
+                android:id="@+id/tvDamageImmunities"
+                android:layout_marginLeft="12dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Damage Resistances: -"
-        android:id="@+id/tvDamageResistances"
-        android:layout_marginLeft="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Damage Resistances: -"
+                android:id="@+id/tvDamageResistances"
+                android:layout_marginLeft="12dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Condition Immunities: -"
-        android:id="@+id/tvConditionImmunities"
-        android:layout_marginLeft="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Condition Immunities: -"
+                android:id="@+id/tvConditionImmunities"
+                android:layout_marginLeft="12dp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:id="@+id/textView5"
-        android:background="#ff791019"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/textView5"
+                android:background="#ff791019"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Actions:"
-        android:textStyle="bold"
-        android:id="@+id/tvActionsTitle"
-        android:layout_marginLeft="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Actions:"
+                android:textStyle="bold"
+                android:id="@+id/tvActionsTitle"
+                android:layout_marginLeft="12dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="None"
-        android:id="@+id/tvActions"
-        android:layout_marginLeft="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="None"
+                android:id="@+id/tvActions"
+                android:layout_marginLeft="12dp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:id="@+id/textView6"
-        android:background="#ff791019"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/textView6"
+                android:background="#ff791019"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Special:"
-        android:textStyle="bold"
-        android:id="@+id/tvSpecialTitle"
-        android:layout_marginLeft="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Special:"
+                android:textStyle="bold"
+                android:id="@+id/tvSpecialTitle"
+                android:layout_marginLeft="12dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="None"
-        android:id="@+id/tvSpecial"
-        android:layout_marginLeft="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="None"
+                android:id="@+id/tvSpecial"
+                android:layout_marginLeft="12dp" />
 
-</LinearLayout>
+        </LinearLayout>
+
 </ScrollView>

@@ -1,21 +1,32 @@
 package com.example.elise.finalproject;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -25,15 +36,50 @@ import java.util.ArrayList;
 
 public class MainActivity extends ActionBarActivity implements OnItemSelectedListener {
 
+    //Variables
     String selectedItem;
+
+    private static String TAG = MainActivity.class.getSimpleName();
+
+    ListView drawerList;
+    RelativeLayout drawerPane;
+    private DrawerLayout drawerLayout;
+
+    ArrayList<NavItem> navItems = new ArrayList<NavItem>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Creating options for navigation
+        navItems.add(new NavItem("Calculator", "Monster encounter calculator"));
+        navItems.add(new NavItem("Monsters", "List of all monsters"));
 
+        // Setting up the hamburger menu icon
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        // DrawerLayout
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+
+        // Populate the Navigtion Drawer with options
+        drawerPane = (RelativeLayout) findViewById(R.id.drawerPane);
+        drawerList = (ListView) findViewById(R.id.navList);
+        DrawerListAdapter adapter = new DrawerListAdapter(this, navItems);
+        drawerList.setAdapter(adapter);
+
+        // Drawer Item click listeners
+        drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                selectItemFromDrawer(position);
+            }
+        });
+
+
+        //Request instance of SharedPreferences
         SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
+        //Obtain user preferences
         selectedItem = prefs.getString("selectedItem","Name");
 
         //Create the bundle and put our values into it
@@ -42,21 +88,21 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
 
         RecyclerViewFragment recyclerFrag = new RecyclerViewFragment();
 
-        //Set the arguments of the SumFragment
+        //Set the arguments of the RecyclerViewFragment
         recyclerFrag.setArguments(bundle);
 
         //Fragment transaction for the recycler view fragment
-        getFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container, recyclerFrag)
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                .commit();
+        if (savedInstanceState == null) {
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, recyclerFrag)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit();
+        }
 
         //Request editor for SharedPreferences
         SharedPreferences.Editor editor = prefs.edit();
-
         //Give value to editor
         editor.putString("selectedItem", selectedItem);
-
         //Commit changes
         editor.commit();
     }
@@ -76,7 +122,6 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
                 R.array.sortOptions, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
 
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
@@ -116,7 +161,6 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
         //Transition into new fragment
         getFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, recyclerFrag)
-                .addToBackStack("")
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 .commit();
 
@@ -124,16 +168,121 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
         SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
         //Request editor for SharedPreferences
         SharedPreferences.Editor editor = prefs.edit();
-
         //Give value to editor
         editor.putString("selectedItem", selectedItem);
-
         //Commit changes
         editor.commit();
     }
 
     public void onNothingSelected(AdapterView<?> parent) {
         // Another interface callback
+    }
+
+    /*
+        * Called when a particular item from the navigation drawer
+        * is selected.
+        * */
+    private void selectItemFromDrawer(int position) {
+
+        if (position == 0){
+            //Declare and instantiate the intent for the encounter calculator
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            startActivity(intent);
+
+        } else {
+            SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
+            selectedItem = prefs.getString("selectedItem","Name");
+
+            //Declare and instantiate the fragment
+            RecyclerViewFragment recyclerFrag = new RecyclerViewFragment();
+
+            //Create the bundle and put our values into it
+            Bundle bundle = new Bundle();
+            bundle.putString("selectedItem", selectedItem);
+
+            //Set the arguments of the SumFragment
+            recyclerFrag.setArguments(bundle);
+
+            //Transition into new fragment
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, recyclerFrag)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit();
+
+            //Request editor for SharedPreferences
+            SharedPreferences.Editor editor = prefs.edit();
+            //Give value to editor
+            editor.putString("selectedItem", selectedItem);
+            //Commit changes
+            editor.commit();
+        }
+
+        drawerList.setItemChecked(position, true);
+        //setTitle(navItems.get(position).title);
+
+        // Close the drawer
+        drawerLayout.closeDrawer(drawerPane);
+
+    }
+    // class for an item in the navigation drawer
+    class NavItem {
+        String title;
+        String subtitle;
+
+        public NavItem(String title, String subtitle) {
+            this.title = title;
+            this.subtitle = subtitle;
+        }
+    }
+
+    //Adapter for navigation drawer to populate the drawer with data
+    class DrawerListAdapter extends BaseAdapter {
+
+        //Variables
+        Context context;
+        ArrayList<NavItem> navItems;
+
+        //Constructor
+        public DrawerListAdapter(Context context, ArrayList<NavItem> navItems) {
+            this.context = context;
+            this.navItems = navItems;
+        }
+
+        @Override
+        public int getCount() {
+            return navItems.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return navItems.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View view;
+
+            if (convertView == null) {
+                LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                view = inflater.inflate(R.layout.drawer_item, null);
+            }
+            else {
+                view = convertView;
+            }
+
+            TextView titleView = (TextView) view.findViewById(R.id.title);
+            TextView subtitleView = (TextView) view.findViewById(R.id.subtitle);
+
+            titleView.setText( navItems.get(position).title );
+            subtitleView.setText(navItems.get(position).subtitle);
+
+            return view;
+        }
     }
 
 }
