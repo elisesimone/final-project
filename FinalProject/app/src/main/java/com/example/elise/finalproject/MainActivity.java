@@ -1,7 +1,5 @@
 package com.example.elise.finalproject;
 
-import android.app.Activity;
-import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
@@ -9,12 +7,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,12 +18,10 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 
 /**
@@ -39,10 +33,9 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
     //Variables
     String selectedItem;
 
-    private static String TAG = MainActivity.class.getSimpleName();
-
     ListView drawerList;
     RelativeLayout drawerPane;
+    private ActionBarDrawerToggle drawerToggle;
     private DrawerLayout drawerLayout;
 
     ArrayList<NavItem> navItems = new ArrayList<NavItem>();
@@ -76,6 +69,22 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
             }
         });
 
+        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.drawerOpen, R.string.drawerClose) {
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                invalidateOptionsMenu();
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+                invalidateOptionsMenu();
+            }
+
+        };
+
+        drawerLayout.setDrawerListener(drawerToggle);
 
         //Request instance of SharedPreferences
         SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
@@ -224,6 +233,25 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
         drawerLayout.closeDrawer(drawerPane);
 
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Pass the event to ActionBarDrawerToggle
+        // If it returns true, then it has handled
+        // the nav drawer indicator touch event
+        if (drawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        //Changes the navigation drawer icon to the hamburger when drawer closes
+        super.onPostCreate(savedInstanceState);
+        drawerToggle.syncState();
+    }
+
     // class for an item in the navigation drawer
     class NavItem {
         String title;

@@ -13,4 +13,7 @@
     <string name="title_activity_second">Monster Information</string>
     <string name="title_activity_main">MainActivity</string>
 
+    <string name="drawerOpen">open</string>
+    <string name="drawerClose">close</string>
+
 </resources>

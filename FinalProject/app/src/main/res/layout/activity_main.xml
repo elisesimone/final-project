@@ -30,6 +30,7 @@
         android:id="@+id/titleBox"
         android:layout_width="match_parent"
         android:layout_height="130dp"
+        android:clickable="true"
         android:background="#ff791019"
         android:padding="8dp" >
 
