@@ -32,7 +32,7 @@ public class EncounterCalculator {
     private int[] xpThreshold19 = new int[]{2400,4900,7300,10900};
     private int[] xpThreshold20 = new int[]{2800,5700,8500,12700};
     private int[][] xpThresholds = new int[][]{xpThreshold1,xpThreshold2,xpThreshold3,xpThreshold4,
-                                               xpThreshold15,xpThreshold16,xpThreshold17,xpThreshold18,
+                                               xpThreshold5,xpThreshold6,xpThreshold7,xpThreshold8,
                                                xpThreshold9,xpThreshold10,xpThreshold11,xpThreshold12,
                                                xpThreshold13,xpThreshold14,xpThreshold15,xpThreshold16,
                                                xpThreshold17,xpThreshold18,xpThreshold19,xpThreshold20};
