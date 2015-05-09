@@ -227,7 +227,6 @@ public class MainActivity extends ActionBarActivity implements OnItemSelectedLis
         }
 
         drawerList.setItemChecked(position, true);
-        //setTitle(navItems.get(position).title);
 
         // Close the drawer
         drawerLayout.closeDrawer(drawerPane);

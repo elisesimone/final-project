@@ -106,7 +106,6 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
         holder.tvType.setText(monsters.get(position).getType());
         holder.tvAlign.setText(monsters.get(position).getAlignment());
 
-
     }
 
     @Override
@@ -125,7 +124,6 @@ public class MonsterAdapter extends RecyclerView.Adapter<MonsterAdapter.ViewHold
         TextView tvChallenge;
         TextView tvAlign;
         LinearLayout mainPage;
-
 
         //ViewHolder constructor maps views and assigns listeners to each view
         public ViewHolder (View itemView, ItemClickListener listener){
