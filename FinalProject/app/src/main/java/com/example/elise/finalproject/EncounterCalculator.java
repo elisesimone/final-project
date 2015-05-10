@@ -1,5 +1,5 @@
-package com.example.elise.finalproject;
 
+package com.example.elise.finalproject;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
@@ -9,8 +9,8 @@ import java.util.ArrayList;
 public class EncounterCalculator {
 
     private int[] monsterXp = new int[]{10,25,50,100,200,450,700,1100,1800,2300,2900,3900,
-                                        5000,5900,7200,8400,10000,11500,13000,15000,18000,
-                                        20000,22000,25000,27500,30000,32500,36500};
+            5000,5900,7200,8400,10000,11500,13000,15000,18000,
+            20000,22000,25000,27500,30000,32500,36500};
     private int[] xpThreshold1 = new int[]{25,50,75,100};
     private int[] xpThreshold2 = new int[]{50,100,150,200};
     private int[] xpThreshold3 = new int[]{75,150,225,400};
@@ -32,10 +32,10 @@ public class EncounterCalculator {
     private int[] xpThreshold19 = new int[]{2400,4900,7300,10900};
     private int[] xpThreshold20 = new int[]{2800,5700,8500,12700};
     private int[][] xpThresholds = new int[][]{xpThreshold1,xpThreshold2,xpThreshold3,xpThreshold4,
-                                               xpThreshold5,xpThreshold6,xpThreshold7,xpThreshold8,
-                                               xpThreshold9,xpThreshold10,xpThreshold11,xpThreshold12,
-                                               xpThreshold13,xpThreshold14,xpThreshold15,xpThreshold16,
-                                               xpThreshold17,xpThreshold18,xpThreshold19,xpThreshold20};
+            xpThreshold5,xpThreshold6,xpThreshold7,xpThreshold8,
+            xpThreshold9,xpThreshold10,xpThreshold11,xpThreshold12,
+            xpThreshold13,xpThreshold14,xpThreshold15,xpThreshold16,
+            xpThreshold17,xpThreshold18,xpThreshold19,xpThreshold20};
 
     public EncounterCalculator(){
 
@@ -45,7 +45,7 @@ public class EncounterCalculator {
     calcPartyThreshold
     Calculates the parties total XP for the Easy, Medium, Hard, and Deadly
     encounter thresholds.
-     */
+    */
     private int[] calcPartyThreshold(int partySize, int partyLvl){
         int[] tmpXpThreshold = new int[4];
         for(int i=0; i<4; i++){
@@ -58,9 +58,10 @@ public class EncounterCalculator {
     calcMonsterXp
     Calculates the total XP of all monsters in the encounter.
     This result is used for comparison with the party xp threshold.
-     */
-    private int calcMonsterXp(int numMonsters, int CR){
+    */
+    private int calcMonsterXp(int numMonsters, double CR){
         double multiplier = 1; //Depending on the number of monsters, a multiplier is applied to the total
+        int index = 0;
         if(numMonsters>1){
             if(numMonsters == 2)
                 multiplier = 1.5;
@@ -73,21 +74,34 @@ public class EncounterCalculator {
             else
                 multiplier = 4;
         }
+        if(CR>0){
+            if(CR == .125)
+                index = 1;
+            else if(CR == .25)
+                index = 2;
+            else if(CR == .5)
+                index = 3;
+            else
+                index = (int)(CR + 3);
+        }
 
-        return (int)((numMonsters*monsterXp[CR])*multiplier);
+
+        return (int)((numMonsters*monsterXp[index])*multiplier);
 
     }
     /*
     calculateEncounter
     Compares the parties XP thresholds to the total XP of the monsters then assigns the
     appropriate difficulty level to the encounter.
-     */
-    public String calculateEncounter(int partySize, int partyLvl, int numMonsters, int CR){
+    */
+    public String calculateEncounter(int partySize, int partyLvl, int numMonsters, double CR){
         int[] tempXpThreshold;
         int monsterXP;
         String result = "N/A";
         tempXpThreshold = calcPartyThreshold(partySize,partyLvl);
+        System.out.println(tempXpThreshold);
         monsterXP = calcMonsterXp(numMonsters,CR);
+        System.out.println(monsterXP);
         if(monsterXP<tempXpThreshold[0])
             result = "Trivial";
         else if(monsterXP>=tempXpThreshold[0] && monsterXP<tempXpThreshold[1])

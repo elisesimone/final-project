@@ -21,6 +21,10 @@
             android:name=".SecondActivity"
             android:label="@string/title_activity_second" >
         </activity>
+        <activity android:name=".EncounterActivity"
+            android:label="@string/title_activity_calculator">
+
+            </activity>
     </application>
 
 </manifest>

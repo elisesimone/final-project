@@ -1,11 +1,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".SecondActivity">
+    tools:context=".EncounterActivity">
 
     <item
         android:id="@+id/action_settings"
-        android:title="@string/title_activity_second"
+        android:title="@string/title_activity_calculator"
         android:orderInCategory="100"
         app:showAsAction="never" />
+
 </menu>

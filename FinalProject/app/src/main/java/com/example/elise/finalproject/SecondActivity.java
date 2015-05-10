@@ -170,7 +170,8 @@ public class SecondActivity extends ActionBarActivity {
     private void selectItemFromDrawer(int position) {
 
         if (position == 0){
-            //Declare and instantiate the intent for the encounter calculator
+            Intent intent = new Intent(SecondActivity.this, EncounterActivity.class);
+            startActivity(intent);
 
 
         } else {
